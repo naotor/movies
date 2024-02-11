@@ -1,0 +1,59 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended-type-checked",
+    "next/core-web-vitals",
+    "plugin:tailwindcss/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["unused-imports"],
+  "rules": {
+    "unused-imports/no-unused-imports": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type"
+        ],
+        "newlines-between": "always",
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "pathGroups": [
+          {
+            "pattern": "@/components/**",
+            "group": "internal",
+            "position": "before"
+          }
+        ],
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ],
+    "tailwindcss/no-custom-classname": ["off"]
+    // @example for eslint-plugin-strict-dependencies
+    // "strict-dependencies/strict-dependencies": [
+    //   "error",
+    //   [
+    //     {
+    //       "module": "next/link",
+    //       "allowReferenceFrom": ["components/Link.tsx"],
+    //       "allowSameModule": false
+    //     }
+    //   ],
+    //   {
+    //     "resolveRelativeImport": true
+    //   }
+    // ]
+  }
+}
