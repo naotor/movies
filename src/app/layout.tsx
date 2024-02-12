@@ -1,16 +1,11 @@
 import "@/app/globals.css";
+import { GeistSans } from "geist/font";
 import { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
 
 import { Providers } from "@/components/providers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 
 import { cn } from "@/lib/utils";
-
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
@@ -36,7 +31,7 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen font-sans antialiased bg-muted/50",
-          fontSans.variable,
+          GeistSans.className,
         )}
       >
         <Providers

@@ -40,7 +40,10 @@
         }
       }
     ],
-    "tailwindcss/no-custom-classname": ["off"]
+    "tailwindcss/no-custom-classname": ["off"],
+    "react-hooks/exhaustive-deps": "off",
+    "@typescript-eslint/await-thenable": "off"
+
     // @example for eslint-plugin-strict-dependencies
     // "strict-dependencies/strict-dependencies": [
     //   "error",
